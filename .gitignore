@@ -1,0 +1,6 @@
+*.mbox
+*.bin
+*.dat
+*.csv
+*.pyc
+*.eml

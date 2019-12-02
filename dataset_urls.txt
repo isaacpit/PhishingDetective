@@ -1,0 +1,45 @@
+
+
+
+Lots of functions to look at:
+https://github.com/diegoocampoh/MachineLearningPhishing
+
+Wayback Machine:
+https://web.archive.org/web/20150325211330/http://monkey.org/~jose/wiki/doku.php?id=PhishingCorpus
+
+Phishing Bowls / SPAM / PHISH:
+UC Berkeley
+https://security.berkeley.edu/topics/phishing
+
+CSUN
+https://www.csun.edu/it/phishing-examples
+
+Stanford
+https://uit.stanford.edu/phishing
+
+UCLA 
+https://www.it.ucla.edu/security/alerts/phishing-scams
+
+Spam Assassin Public Corpus
+https://spamassassin.apache.org/old/publiccorpus/
+
+HAM:
+Enron dataset
+https://www.cs.cmu.edu/~enron/
+or
+https://www.kaggle.com/wcukierski/enron-email-dataset
+
+NLP:
+Stanford NLP documentation
+https://nlp.stanford.edu/software/stanford-dependencies.shtml#Download
+Stanford Manual
+https://nlp.stanford.edu/software/dependencies_manual.pdf
+
+Security Repo (List of security repos):
+http://www.secrepo.com/
+
+SMS Spam dataset:
+https://archive.ics.uci.edu/ml/datasets/sms+spam+collection
+
+Phish - IRIS dataset download link:
+http://web.cs.hacettepe.edu.tr/~selman/phish-iris-dataset/phishIRIS_DL_Dataset.zip

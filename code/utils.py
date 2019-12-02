@@ -1,6 +1,6 @@
 from config import *
 import re
-from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
 import urllib, sys
 import pythonwhois
 import pprint
@@ -13,6 +13,7 @@ def getpayload(msg):
 def __getpayload_rec__(msg, payloadresult):
     payload = msg.get_payload()
 
+    # print(msg)
     if str(msg.get('content-transfer-encoding')).lower() == "base64":
         payload = msg.get_payload(decode=True)
 
@@ -135,13 +136,22 @@ def getcssusage(message):
     """
     result = []
     payload = getpayload_dict(message)
+
+    # print("len payload: ", len(payload))
     for part in payload:
         if part["mimeType"].lower() == "text/html":
+            # print("ENTERED HERE")
             htmlcontent = part["payload"]
+            # print("htmlcontent", htmlcontent)
+            # print("html len: ", len(htmlcontent))
             soup = BeautifulSoup(htmlcontent)
+            # print('soup', soup)
+            # print("soup len: ", len(soup))
             csslinks = soup.findAll("link")
+            # print(csslinks)
             for css in csslinks:
                 result.append(css)
+            
     return result
 
 
@@ -200,12 +210,18 @@ def get_whois_data(url):
     domain = extract_registered_domain;
     return pythonwhois.get_whois(domain)
 
-
+import pprint as pp
 def ishtml(message):
     result = ("text/html" in getContentTypes(message))
     payload = getpayload_dict(message)
+    # print(result)
+    # print(payload)
+    
     for part in payload:
-        if result or BeautifulSoup(part["payload"]).find():
+        # print("*"*78)
+        # pp.pprint(part)
+        # print("beautifulSoup: ", BeautifulSoup(part["payload"], "html.parser").find())
+        if result or BeautifulSoup(part["payload"], "html.parser").find():
             return True
     return result
 
